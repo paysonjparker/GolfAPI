@@ -14,12 +14,12 @@ router
     .get(ProductsController.readProductsByDescriptionSearch);
 router
     .route('/products')
-    .get(ProductsController.createProduct);
+    .post(ProductsController.createProduct);
 router
     .route('/products')
-    .get(ProductsController.updateProduct);
+    .put(ProductsController.updateProduct);
 router
     .route('/products/:productId')
-    .get(ProductsController.deleteProduct);
+    .delete(ProductsController.deleteProduct);
 
 export default router;
