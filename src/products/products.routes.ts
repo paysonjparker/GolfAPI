@@ -16,7 +16,7 @@ router
     .route('/products')
     .post(ProductsController.createProduct);
 router
-    .route('/products')
+    .route('/products/edit/:productId')
     .put(ProductsController.updateProduct);
 router
     .route('/products/:productId')

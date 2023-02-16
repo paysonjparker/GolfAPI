@@ -85,7 +85,10 @@ export const createProduct: RequestHandler =async (req:Request, res: Response) =
 
 export const updateProduct: RequestHandler =async (req:Request, res: Response) => {
     try{
-        const okPacket: OkPacket = await ProductDao.updateProduct(req.body);
+        let productId = parseInt(req.params.productId as string);
+        console.log('productId', productId);
+
+        const okPacket: OkPacket = await ProductDao.updateProduct(productId, req.body);
 
         console.log('req.body', req.body);
         console.log('product', okPacket);
