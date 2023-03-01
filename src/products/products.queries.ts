@@ -31,8 +31,8 @@ export const productsQueries = {
     `,
     updateProduct: `
         UPDATE golf_inventory.products
-        SET name = ?, description = ?, brand = ?, price = ?
-        WHERE productId = ?;
+            SET name = ?, description = ?, brand = ?, price = ?
+        WHERE productId = ?
     `,
     deleteProduct: `
         DELETE FROM golf_inventory.products

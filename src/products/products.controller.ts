@@ -83,12 +83,10 @@ export const createProduct: RequestHandler =async (req:Request, res: Response) =
     }
 }
 
-export const updateProduct: RequestHandler =async (req:Request, res: Response) => {
+export const updateProduct: RequestHandler = async (req:Request, res: Response) => {
     try{
-        let productId = parseInt(req.params.productId as string);
-        console.log('productId', productId);
-
-        const okPacket: OkPacket = await ProductDao.updateProduct(productId, req.body);
+        console.log('product', req.body);
+        const okPacket: OkPacket = await ProductDao.updateProduct(req.body);
 
         console.log('req.body', req.body);
         console.log('product', okPacket);
@@ -96,6 +94,7 @@ export const updateProduct: RequestHandler =async (req:Request, res: Response) =
         res.status(200).json(
             okPacket
         );
+
     } catch(error) {
         console.error('[products.controller][updateProduct][Error] ', error);
         res.status(500).json({

@@ -27,9 +27,9 @@ export const createProduct =async (product:Product) => {
         [product.name, product.description, product.brand, product.price]);
 };
 
-export const updateProduct =async (productId:number, product:Product) => {
-    return execute<OkPacket>(productsQueries.updateProduct, 
-        [product.name, product.description, product.brand, product.price]);
+export const updateProduct =async (product:Product) => {
+    return execute<OkPacket>(productsQueries.updateProduct,
+        [product.name, product.description, product.brand, product.price, product.productId]);
 };
 
 export const deleteProduct =async (productId:number) => {
